@@ -1,0 +1,83 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in library 'letter-freq'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=letter-freq"
+                ],
+                "filter": {
+                    "name": "letter-freq",
+                    "kind": "lib"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'letter-freq'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=letter-freq",
+                    "--package=letter-freq"
+                ],
+                "filter": {
+                    "name": "letter-freq",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'letter-freq'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=letter-freq",
+                    "--package=letter-freq"
+                ],
+                "filter": {
+                    "name": "letter-freq",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug benchmark 'letter_freq_bench'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bench=letter_freq_bench",
+                    "--package=letter-freq"
+                ],
+                "filter": {
+                    "name": "letter_freq_bench",
+                    "kind": "bench"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
